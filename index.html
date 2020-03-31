@@ -7,14 +7,23 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link href="style.css" rel="stylesheet">
   <script defer src="script.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Germania+One&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Nova+Cut&display=swap" rel="stylesheet">
   <title>Karuta</title>
 </head>
+
 <body>
+ 
+<br>
+  <!-- <P>mistakes made = </P><p id=counter>0</p> -->
   <div class="container">
+    
 
     <div id="prompt-container" class="hide">
       <div id="prompt">Prompt</div>
       <div id="response-buttons" class="button-grid">
+        
         <button class="button">Response 1</button>
         <button class="button">Response 2</button>
         <button class="button">Response 3</button>
@@ -24,8 +33,33 @@
 
       </div>
     </div>
+    <div id="introduction">
+      <h2>Welcome to</h2>
+      <h1>The Immortal Karuta</h1>
+    </div>
+    <div id="preamble">
+      <p> The story begins like this.... <br> <br> While working late one night on a report on a certain 
+        English poet,<br>  playwright, and actor, a figure who is widely regarded as the greatest<br> writer in the English 
+        language and the world's greatest dramatist.<br> You feel a malaise come over you. <br> <br> 
+        You blink as you struggle to keep your eyes open. It was then, on <br>the third blink, you found yourself transported 
+        into a dark grimey dungeon. <br>You try to find a way out but the corridors are never ending. <br><br>
+        It was then you notice the writing on the wall
+      </p>
+
+      <h3>
+        To escape my labyrinth you have <br>to pass a series of tests. 
+        <br> <br> 
+        Match the prose written on the walls with a<br> corresponding engraving 
+        and I might just let you go <br> fail me 3 times and you will never leave
+      </h3>
+      
+      </div>
+
+      <h3 id="lose" class="lose hide">
+        You have lost my patience, you shall wander these dungeons forever!
+      </h3>
     <div class="controls">
-      <button id="start-button" class="start-button button">Start</button>
+      <button id="start-button" class="start-button button">Begin</button>
       <button id="next-button" class="next-button button hide">Next</button>
     </div>
 

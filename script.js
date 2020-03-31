@@ -1,14 +1,26 @@
 const startButton = document.getElementById("start-button")
 
+const p = document.getElementById("introduction")
+
+const preamble = document.getElementById("preamble")
+
 const nextButton = document.getElementById("next-button")
 
 const promptContainerElement = document.getElementById("prompt-container")
+
+const promptLoser = document.getElementById("lose")
 
 const promptElement = document.getElementById("prompt")
 
 const responseButtonElement = document.getElementById("response-buttons")
 
+var chanceCount = document.getElementById("span")
+
 var shuffledPrompt, currentPromtIndex
+
+var wrongCount = 0
+
+var count = 0
 
 startButton.addEventListener("click", startGame)
 
@@ -16,12 +28,18 @@ nextButton.addEventListener("click",() => {
   currentPromtIndex++
   setNextPrompt()
 })
-
+ 
 // Start button function
 function startGame(){
   console.log("Started")
   // Hides button after being clicked
   startButton.classList.add("hide")
+  p.classList.add("hide")
+  preamble.classList.add("hide")
+  promptLoser.classList.add("hide")
+  promptElement.classList.remove("hide")
+  responseButtonElement.classList.remove("hide")
+  wrongCount = 0
   // Randomizer for beging question, gives positive or negative number with equal probility 
   shuffledPrompt = prompt.sort(() => Math.random() - .5 )
   currentPromtIndex =  0
@@ -48,7 +66,7 @@ function showPrompt(prompt){
     button.classList.add("button")
     if (response.correct) {
       button.dataset.correct = response.correct
-    }
+    } 
     button.addEventListener("click", selectResponse)
     responseButtonElement.appendChild(button)
   })
@@ -73,6 +91,22 @@ function selectResponse(event){
   // Checks if response is correct
   const correct = selectedButton.dataset.correct
   setStatusClass(document.body, correct)
+  if (correct) {
+    count = count + 1
+    console.log ("count" + " " + count)
+  } else {
+    wrongCount = wrongCount + 1
+    
+    console.log ("wrongCount" + " " + wrongCount)
+    if (wrongCount === 3) {
+      responseButtonElement.classList.add("hide")
+      promptLoser.classList.remove("hide")
+      nextButton.classList.add("hide")
+      promptElement.classList.add("hide")
+      startButton.innerText = "Play again"
+      startButton.classList.remove("hide")
+    }
+  }
   // Loops through all questions, need to create an array to use forEach loop
   Array.from(responseButtonElement.children).forEach(button => {
     setStatusClass(button, button.dataset.correct)
@@ -81,19 +115,19 @@ function selectResponse(event){
   if (shuffledPrompt.length > currentPromtIndex + 1 ){
     nextButton.classList.remove("hide")
   } else {
-    startButton.innerText = "Play again"
+    startButton.innerText = "Continue"
     startButton.classList.remove("hide")
   }
-  
 }
 
+ 
 // Changes button and background to reflect if answers are correct or wrong
 function setStatusClass(element, correct) {
   clearStatusClass(element)
   if (correct) {
     element.classList.add("correct")
   } else {
-    element.classList.add("wrong")
+    element.classList.add("wrong")   
   }
 }
 
@@ -106,39 +140,47 @@ function clearStatusClass(element) {
 // Promopts and response arrays
 const prompt = [
   {
-    prompt: '‘To be, or not to be: that is the question’',
+    prompt: 'To be, or not to be: that is the question',
     responses: [
       { text: 'Hamlet Act 3, Scene 1', correct: true },
       { text: 'As You Like it Act 2, Scene 7', correct: false },
       { text: 'Romeo and Juliet Act 2, Scene 2', correct: false },
-      { text: 'Richard III Act 1, Scene 1', correct: false }
+      { text: 'Richard III Act 1, Scene 1', correct: false },
+      { text: 'Macbeth Act 2, Scene 1', correct: false },
+      { text: 'Twelfth Night Act 2, Scene 5', correct: false },
     ]
   },
   {
-    prompt: '‘All the world ‘s a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts.’',
+    prompt: 'All the world ‘s a stage, and all the men and women merely players. They have their exits and their entrances; And one man in his time plays many parts.',
     responses: [
       { text: 'Hamlet Act 3, Scene 1', correct: false },
       { text: 'As You Like it Act 2, Scene 7', correct: true },
       { text: 'Romeo and Juliet Act 2, Scene 2', correct: false },
-      { text: 'Richard III Act 1, Scene 1', correct: false }
+      { text: 'Richard III Act 1, Scene 1', correct: false },
+      { text: 'Macbeth Act 2, Scene 1', correct: false },
+      { text: 'Twelfth Night Act 2, Scene 5', correct: false },
     ]
   },
   {
-    prompt: 'Romeo, Romeo! wherefore art thou Romeo?’',
+    prompt: 'Romeo, Romeo! wherefore art thou Romeo?',
     responses: [
       { text: 'Hamlet Act 3, Scene 1', correct: false },
       { text: 'As You Like it Act 2, Scene 7', correct: false },
       { text: 'Romeo and Juliet Act 2, Scene 2', correct: true },
-      { text: 'Richard III Act 1, Scene 1', correct: false }
+      { text: 'Richard III Act 1, Scene 1', correct: false },
+      { text: 'Macbeth Act 2, Scene 1', correct: false },
+      { text: 'Twelfth Night Act 2, Scene 5', correct: false },
     ]
   },
   {
-    prompt: '‘Now is the winter of our discontent’',
+    prompt: 'Now is the winter of our discontent',
     responses: [
       { text: 'Hamlet Act 3, Scene 1', correct: false },
       { text: 'As You Like it Act 2, Scene 7', correct: false },
       { text: 'Romeo and Juliet Act 2, Scene 2', correct: false },
-      { text: 'Richard III Act 1, Scene 1', correct: true }
+      { text: 'Richard III Act 1, Scene 1', correct: true },
+      { text: 'Macbeth Act 2, Scene 1', correct: false },
+      { text: 'Twelfth Night Act 2, Scene 5', correct: false },
     ]
   }
-]
+] 

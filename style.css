@@ -5,13 +5,12 @@
   font-family: Arial, Helvetica, sans-serif;
 }
 
-:root {
-  --hue-neutral: 200;
-  --hue-wrong: 0;
-  --hue-correct: 145;
-}
+
+
+
 
 body {
+  display: inline;
   --hue: var(--hue-neutral);
   padding: 0;
   margin: 0;
@@ -20,24 +19,64 @@ body {
   height: 100vh;
   justify-content: center;
   align-items: center;
-  background-color: white;
+  
+  background-image: url("https://i.imgur.com/TpO8H.png");
 }
 
 body.correct{
-  background-color: green;
 }
 
 body.wrong{
-  background-color: red;
+  animation: shake 0.5s;
+  animation-iteration-count: 0.2s;
+}
+
+@keyframes shake {
+  0% { transform: translate(1px, 1px) rotate(0deg); }
+  10% { transform: translate(-1px, -2px) rotate(-1deg); }
+  20% { transform: translate(-3px, 0px) rotate(1deg); }
+  30% { transform: translate(3px, 2px) rotate(0deg); }
+  40% { transform: translate(1px, -1px) rotate(1deg); }
+  50% { transform: translate(-1px, 2px) rotate(-1deg); }
+  60% { transform: translate(-3px, 1px) rotate(0deg); }
+  70% { transform: translate(3px, 1px) rotate(-1deg); }
+  80% { transform: translate(-1px, -1px) rotate(1deg); }
+  90% { transform: translate(1px, 2px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+.introduction .preamble {
+ 
+}
+h2 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+h1 {
+  font-family: 'Press Start 2P', cursive;
+  text-align: center;
+}
+
+h3 {
+  font-family: 'Germania One', cursive;
+  font-size: 30px;
+  text-align: center;
 }
 
 
+p{
+  
+  font-size: 20px;
+  text-align: center;
+}
 .container {
   width: 800px;
-  max-width: 80%;
-  background-color: lightgrey;
+  height: 800px;
+  max-width: 60%;
   padding: 10px;
-  box-shadow: 0 0 10px 2px;
+  border: outset;
+  background-color: rgba(232, 232, 232, 0.8);
 }
 
 .button-grid {
@@ -47,34 +86,49 @@ body.wrong{
   margin: 20px 0;
 }
 
+
+
 .button {
-  --hue: var(--hue-neutral);
-  border: 3px solid hsl(var(--hue), 100%, 30%);
-  background-color: hsl(var(--hue), 100%, 50%);
+  font-family: 'Nova Cut', cursive;
+  font-size: 30px;
+  text-align: center;
+  border: outset;
+  height: 250px;
+  background-color: rgba(232, 232, 232, 1);;
   padding: 5px 10px;
-  color: white;
+  color: black;
   outline: none;
 }
 
 .button:hover{
  border-color: black;
+ border: inset;
 }
 
 .button.correct {
-  --hue: var(--hue-correct);
+  background-color: rgb(81, 255, 0);
   color: black;
 }
 
 .button.wrong {
-  --hue: var(--hue-wrong);
+  background-color: red;
+  color: white
 }
 
-.start-btn, .next-btn {
+.start-button, .next-button {
+  height: 80px;
+  font-family: 'Press Start 2P', cursive;
   font-size: 1.5rem;
   font-weight: bold;
   padding: 10px 20px;
+  
 }
-
+#prompt {
+  margin-top: 15px;
+  font-family: 'Germania One', cursive;
+  font-size: 30px;
+  text-align: center;
+}
 .controls {
   display: flex;
   justify-content: center;
