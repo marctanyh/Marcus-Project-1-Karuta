@@ -42,7 +42,32 @@ Please answer the following questions. Take at least 30 minutes to prepare.
 
   For each, please include code examples.
   1. Code snippet up to 20 lines.
+  
+  function selectResponse(event){
+  const selectedButton = event.target
+  // Checks if response is correct
+  const correct = selectedButton.dataset.correct
+  setStatusClass(document.body, correct)
+  if (correct) {
+    count = count + 1
+    console.log ("count" + " " + count)
+  } else {
+    wrongCount = wrongCount + 1
+    
+    console.log ("wrongCount" + " " + wrongCount)
+    if (wrongCount === 3) {
+      responseButtonElement.classList.add("hide")
+      promptLoser.classList.remove("hide")
+      nextButton.classList.add("hide")
+      promptElement.classList.add("hide")
+      startButton.innerText = "Play again"
+      startButton.classList.remove("hide")
+    }
+  }
+  
   2. Code design documents or architecture drawings / diagrams.
+  
+  
 
 #### WDI Unit 1 Post Mortem
 1. What habits did I use during this unit that helped me?
