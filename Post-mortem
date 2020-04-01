@@ -1,0 +1,58 @@
+## Project Post Mortem
+Post mortems are important to understand about what happened in a project and actively think about what you learned.
+
+Post-mortems are meant to be a blame-less space open to objective conversation about what went well and what could be improved.
+
+Even in the examples below, where tens of millions of dollars could be lost, the best approach is to think through the series of events that led to the outcome.
+
+Large mistakes are almost never the fault of the developer, but of the sytems and processes in place to prevent errors and problems.
+
+[https://github.com/danluu/post-mortems](https://github.com/danluu/post-mortems)
+https://blog.codinghorror.com/the-project-postmortem/
+
+
+
+### What to Bring
+Please answer the following questions. Take at least 30 minutes to prepare.
+
+#### Approach and Process
+
+1. What in my process and approach to this project would I do differently next time?
+
+- Thinking through the potetntial furthers before starting on the project. Similarly, I thing laying out a framework on how   to approach the task and subsequently allocating the appropriate amount of time to tackle the tasks at had. Overall, I  
+  plan to take a more systemetic approach for future projects.
+
+1. What in my process and approach to this project went well that I would repeat next time?
+
+- Trying to get into the habit of writing comments for the code and breaking down into the specificity of the different 
+  parts housed within a function.
+
+--
+
+#### Code and Code Design
+
+1. What in my code and program design in the project would I do differently next time?
+ 
+- More console logging between tasks and debugging along the way as opposed to trying to accomplish as much as I can before 
+  checking out if everything runs without errors. 
+
+1. What in my code and program design in the project went well? Is there anything I would do the same next time?
+
+ - Being able to backtrack the process of the code and finding out where I could build upon for my furthers. I think taking    the time to think through the work instead of doing it the way I have explicidly done it before has been beneficial.
+
+  For each, please include code examples.
+  1. Code snippet up to 20 lines.
+  2. Code design documents or architecture drawings / diagrams.
+
+#### WDI Unit 1 Post Mortem
+1. What habits did I use during this unit that helped me?
+
+- Systemetic thinking really helped be parse out the ultities of the different aspects of .js for me.
+
+2. What habits did I have during this unit that I can improve on?
+
+- I need a better work ethic and the perseverence to push through a session of coding.
+
+3. How is the overall level of the course during this unit? (instruction, course materials, etc.)
+
+- To be honest, I had trouble cathing up with the mode of instruction. But I think the remote learning has afforded me more time for self revision and that has been really useful.
